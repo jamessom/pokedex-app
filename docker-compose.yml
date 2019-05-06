@@ -1,0 +1,10 @@
+version: "3"
+
+services:
+  pokedex_app:
+    container_name: pokedex_app
+    build: .
+    volumes: [ ".:/app", "/app/node_modules" ]
+    ports: [ "3001:3000" ]
+    environment:
+      - NODE_ENV=development
