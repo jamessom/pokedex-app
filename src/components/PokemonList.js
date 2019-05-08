@@ -1,43 +1,26 @@
-import React from 'react';
+import React, { Component } from 'react';
+
 import PokemonDetail from './PokemonDetail';
 
 const baseRawImage = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon';
 
-const PokemonList = (props) => {
+class PokemonList extends Component {
 
-  const pokemons = props.pokemons.data
+  render () {
+    const pokemons = this.props.pokemons.data;
 
-  if (pokemons !== undefined) {
-    const test = pokemons.map(poke => {
-      return <PokemonDetail key={poke.id} name={poke.attributes.name} image={`${baseRawImage}/${poke.id}.png`} />
-    });
+    if (pokemons !== undefined) {
+      const data = pokemons.map(poke => {
+        return <PokemonDetail key={poke.id} name={poke.attributes.name} image={`${baseRawImage}/${poke.id}.png`} />
+      });
 
-    return <div className='container'>
-      <div className="row">{test}</div>
-    </div>
-  }else{
-    return (
-      <div className='container'>
-        <div className='row'>
-          <PokemonDetail types="psychic" name="mew" image={baseRawImage + '/151.png'} />
-          <PokemonDetail types="psychic" name="mew" image={baseRawImage + '/151.png'} />
-          <PokemonDetail types="psychic" name="mew" image={baseRawImage + '/151.png'} />
-          <PokemonDetail types="water, rock" name="kabutops" image={baseRawImage + '/141.png'} />
-          <PokemonDetail types="water, rock" name="kabutops" image={baseRawImage + '/141.png'} />
-          <PokemonDetail types="water, rock" name="kabutops" image={baseRawImage + '/141.png'} />
-          <PokemonDetail types="ice, water" name="lapras" image={baseRawImage + '/131.png'} />
-          <PokemonDetail types="ice, water" name="lapras" image={baseRawImage + '/131.png'} />
-          <PokemonDetail types="ice, water" name="lapras" image={baseRawImage + '/131.png'} />
-        </div>
+      return <div className='container'>
+        <div className="row">{data}</div>
       </div>
-    );
+    }
+
+    return 'carregando...';
   }
-
-  // if (pokemons != undefined) {
-  //   pokemons.map(poke => <PokemonDetail types="psychic" name={poke.attributes.name} image={`${baseRawImage}/${poke.id}.png`} />)
-  // }
-
-  
 }
 
 export default PokemonList;
