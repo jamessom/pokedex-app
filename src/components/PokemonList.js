@@ -17,20 +17,14 @@ const PokemonList = (props) => {
     </div>
   }else{
     return (
-      <div>
+      <div className='container'>
         <div className='row'>
           <PokemonDetail types="psychic" name="mew" image={baseRawImage + '/151.png'} />
           <PokemonDetail types="psychic" name="mew" image={baseRawImage + '/151.png'} />
           <PokemonDetail types="psychic" name="mew" image={baseRawImage + '/151.png'} />
-        </div>
-
-        <div className='row'>
           <PokemonDetail types="water, rock" name="kabutops" image={baseRawImage + '/141.png'} />
           <PokemonDetail types="water, rock" name="kabutops" image={baseRawImage + '/141.png'} />
           <PokemonDetail types="water, rock" name="kabutops" image={baseRawImage + '/141.png'} />
-        </div>
-
-        <div className='row'>
           <PokemonDetail types="ice, water" name="lapras" image={baseRawImage + '/131.png'} />
           <PokemonDetail types="ice, water" name="lapras" image={baseRawImage + '/131.png'} />
           <PokemonDetail types="ice, water" name="lapras" image={baseRawImage + '/131.png'} />

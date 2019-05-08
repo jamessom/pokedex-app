@@ -2,7 +2,7 @@ import React from 'react';
 
 const PokemonDetail = props => {
   return (
-    <div className="card card-stats col-sm-4">
+    <div className="card card-stats col-12 col-sm-6 col-lg-4">
       <div className="card-body">
         <div className="row">
           <div className="col">
