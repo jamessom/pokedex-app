@@ -1,7 +1,5 @@
 #!/bin/sh
 
-if [ ! -d "node_modules" ]; then
-  yarn i
-fi
+yarn
 
 yarn start
