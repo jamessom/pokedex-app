@@ -1,6 +1,7 @@
-import React from "react";
+import React, {Component} from "react";
+import PokemonCreate from "./PokemonCreate";
 
-class PokemonSearch extends React.Component {
+class PokemonSearch extends Component {
 
   state = { term: '' };
 
@@ -23,13 +24,17 @@ class PokemonSearch extends React.Component {
                 </div>
                 <input
                   className="form-control form-control-alternative"
-                  placeholder="Search"
+                  placeholder="Buscar"
                   type="text"
                   value={this.state.term}
                   onChange={ e => this.setState({ term: e.target.value }) }
                 />
               </div>
             </div>
+          </div>
+
+          <div className="col-md-12">
+            <PokemonCreate />
           </div>
         </div>
       </form>
