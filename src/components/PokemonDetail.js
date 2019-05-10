@@ -2,7 +2,7 @@ import React from 'react';
 
 const PokemonDetail = props => {
   return (
-    <div className="card card-stats col-12 col-sm-6 col-lg-4">
+    <div className="card card-stats col-12 col-sm-6 col-lg-4" onClick={ e => console.log(props)}>
       <div className="card-body">
         <div className="row">
           <div className="col">
@@ -11,7 +11,7 @@ const PokemonDetail = props => {
           </div>
           <div className="col-auto">
             <div className="icon icon-shape text-white">
-              <img src={props.image} alt={props.name} />
+              <img key={props.pokeKey} src={props.image} alt={props.name} />
             </div>
           </div>
         </div>
