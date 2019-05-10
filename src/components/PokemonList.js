@@ -11,7 +11,7 @@ class PokemonList extends Component {
 
     if (pokemons !== undefined) {
       const data = pokemons.map(poke => {
-        return <PokemonDetail key={poke.id} name={poke.attributes.name} image={`${baseRawImage}/${poke.id}.png`} />
+        return <PokemonDetail key={poke.id} pokeKey={poke.id} name={poke.attributes.name} pokeId={poke.id} image={`${baseRawImage}/${poke.id}.png`} />
       });
 
       return <div className='container'>
