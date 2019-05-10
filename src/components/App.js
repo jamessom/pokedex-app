@@ -8,10 +8,16 @@ class App extends React.Component {
 
   state = { pokemons: [] };
 
-  onSearchSubmit = async (term) => {
-    const response = await PokeAPI.get(`/api/v1/pokemons.json?filter=${term}`, {});
+  async componentDidMount () {
+    const response = await PokeAPI.get(`/api/v1/pokemons/`, {});
     this.setState({ pokemons: response.data });
   }
+  
+  onSearchSubmit = async (term) => {
+    const response = await PokeAPI.get(`/api/v1/pokemons/?filter=${term}`, {});
+    this.setState({ pokemons: response.data });
+  }
+
 
   render() {
     return (
