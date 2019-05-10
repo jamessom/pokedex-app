@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import PokeAPI from '../pokeapi/PokeAPI'
 import { Modal, Button, Form } from 'react-bootstrap';
 
-const PokemonCreate = props => {
+const PokemonCreate = () => {
   const [name, setName] = useState('');
   const [show, setShow] = useState('');
   const [message, setMessage] = useState('');
