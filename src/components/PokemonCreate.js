@@ -5,12 +5,20 @@ import { Modal, Button, Form } from 'react-bootstrap';
 const PokemonCreate = props => {
   const [name, setName] = useState('');
   const [show, setShow] = useState('');
+  const [message, setMessage] = useState('');
 
-  const handleSubmit = (async () => {
-    await PokeAPI.post(`/api/v1/pokemons`, {
-      pokemon: { name }
-    })
-    setShow(false)
+
+  const handleSubmit = (async (testObj) => {
+    try {
+      await PokeAPI.post(`/api/v1/pokemons`, {
+        pokemon: { name }
+      });
+
+      setShow(false)
+    } catch (error) {
+      setMessage('Ocorreu algum erro ao cadastrar o pokemon, tente novamente')
+    }
+    
     setName('')
   });
 
@@ -24,6 +32,7 @@ const PokemonCreate = props => {
         </Modal.Header>
         <Modal.Body>
           <Form.Control type="text" placeholder="Escolha o nome para um novo Pokémon" value={name || ''} onChange={e => setName(e.target.value)} />
+          <div>{message}</div>
         </Modal.Body>
         <Modal.Footer>
           <form onSubmit={handleSubmit}>
